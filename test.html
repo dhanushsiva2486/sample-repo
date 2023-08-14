@@ -1,15 +1,18 @@
+<!DOCTYPE html>
 <html>
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  <style>
+  <style> 
+   
     body {
       background-color: #ebf2ff;
     }
-  </style>
-<body> 
-  <!-- Modal -->
+  </style><!-- ... your head content ... -->
+</head>
+<body>
+  
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -18,19 +21,45 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        
+        <div class="form-group mt-3">
+          <label for="imageurl mt-2">Image Url</label>
+          <input type="url" class="form-control" id="imageurl" aria-describedby="Image Url" placeholder="http://example.com/xyz.png">
+          
+        </div>
+
+        <div class="form-groupmt-3">
+          <label for="tasktitle">Task Title</label>
+          <input type="text" class="form-control" id="tasktitle" aria-describedby="Text Title" placeholder="Enter Task title">
+          
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="tasktype">Task Type</label>
+          <input type="text" class="form-control" id="tasktype" aria-describedby="Task Type" placeholder="Enter Task Type">
+          
+        </div>
+
+        <div class="form-group mt-3">
+          <label for="taskdescription">Task description</label>
+          <textarea rows="6" type="text" class="form-control" id="taskdescription" aria-describedby="Task description" placeholder="Enter Task description"></textarea>
+                   
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" onclick="saveChanges()"  data-bs-dismiss="modal">Save changes</button>
+        
       </div>
     </div>
   </div>
-</div> 
+ </div> 
 
-  
+  <!-- Modal -->
+  <!-- ... your modal content ... -->
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+    <!-- ... your navigation content ... -->  <div class="container-fluid">
       <a class="navbar-brand fw-bold text-primary" href="#">Tasky</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsupportedcontent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,49 +78,47 @@
         </form>
       </div>
     </div>
-    </nav>
-         
-    <div class="container">
-      <div class="row mt-3">
-        <div class="col">
+    
+  </nav>
+
+  <div class="container">
+    <div class="row mt-3">
+     <div class="col">
           
         </div>
         <div class="col-sm-12 col-md-6 col-lg-4 shadow">
           <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <span class="input-group-text" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <span class="input-group-text" id="basic-addon2"><i class="fas fa-search"></i></span>
           </div>
   
         </div>
         <div class="col">
           
-        </div>
+        </div> <!-- ... your search bar ... -->
+    </div>
 
-        <div class="container">
-          <div class="row mt-3">
-            <div class="col">
-              
-            </div>
-            <div class="card ">
-              <div class="card-header d-flex justify-content-end gap-2">
-                <button type="button" class="btn btn-outline-success"><i class="fas fa-pencil-alt"></i></button>
-                <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
-              </div>
-              <div class="card-body">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_k79PrDIQgLe8UQPYaQN2yY7PJKz32oMihw&usqp=CAU" class="card-img-top" alt="...">
-                <h5 class="card-title mt-3 fw-bold text-primary">Title</h5>
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-      
-            </div>
-            <div class="col">
-              
-            </div>
-         
-      </div>
-    </body>
-</head>
+    <div class="row task__container">
+      <div class ="col-sm-12 col-md-6 col-lg-4">
+        <div class="card">
+          <div class="card-header d-flex justify-content-end gap-2 ">
+            <button type="button" class="btn btn-outline-success"><i class="fas fa-pencil-alt"></i></button>
+            <button type="button" class="btn btn-outline-danger"><i class="fas fa-trash-alt"></i></button>
+          </div>
+          <div class="card-body">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_k79PrDIQgLe8UQPYaQN2yY7PJKz32oMihw&usqp=CAU" class="card-img-top" alt="...">
+            <h5 class="card-title  fw-bold text-primary">Title</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+          </div>
+        </div>
+      <!-- ... your existing task card ... -->
+    </div>
+  </div>
+
+  <!-- JavaScript scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="myjs.js"></script>
+</body>
 </html>
- 
